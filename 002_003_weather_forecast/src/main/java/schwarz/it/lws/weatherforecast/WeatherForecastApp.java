@@ -32,9 +32,10 @@ public class WeatherForecastApp {
               userInputHandler.handleUserInput();
             String city = UserInputController.getInput();
 
+// start httpHandler
+           
             String url = String.format(WEATHER_URL, city, WEATHER_API_KEY).replace(" ", "+");
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).build();
-
             try {
                 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
                 if (response.statusCode() != 200) {
