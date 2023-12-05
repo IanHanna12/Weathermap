@@ -1,5 +1,7 @@
 package schwarz.it.lws.weatherforecast.View;
 
+import schwarz.it.lws.weatherforecast.Controller.HttpController;
+
 import java.util.Scanner;
 
 public class UserInputHandler {
@@ -14,6 +16,13 @@ public class UserInputHandler {
                 System.out.println("Bye Bye ...");
                 break;
             }
+
+            if (city!= "exit" && city!= "x") {
+                HttpController httpController = new HttpController();
+                DisplayWeather.displayweather();}
+                else {
+                    System.out.println("Error: " + city + " ist kein gültiger Ort!");
+                }
 
         }
 
